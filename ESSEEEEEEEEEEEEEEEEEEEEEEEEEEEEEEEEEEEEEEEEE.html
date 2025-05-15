@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Voel - Clínica de Psicologia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Voel - Clínica de Psicologia</h1>
+        <nav>
+            <button onclick="showSection('pacientes')">Pacientes</button>
+            <button onclick="showSection('prontuarios')">Prontuários</button>
+            <button onclick="showSection('agenda')">Agenda</button>
+            <button onclick="showSection('relatorios')">Relatórios</button>
+        </nav>
+    </header>
+    <main>
+        <section id="pacientes" class="section">
+            <h2>Cadastro de Pacientes</h2>
+            <form onsubmit="event.preventDefault(); salvarPaciente();">
+                <input type="text" id="nomePaciente" placeholder="Nome completo" required>
+                <input type="date" id="nascimentoPaciente" required>
+                <input type="tel" id="telefonePaciente" placeholder="Telefone">
+                <input type="email" id="emailPaciente" placeholder="E-mail">
+                <textarea id="obsPaciente" placeholder="Observações"></textarea>
+                <button type="submit">Salvar Paciente</button>
+            </form>
+            <h3>Lista de Pacientes</h3>
+            <ul id="listaPacientes"></ul>
+        </section>
+
+        <section id="prontuarios" class="section" style="display:none">
+            <h2>Prontuários</h2>
+            <form onsubmit="event.preventDefault(); salvarProntuario();">
+                <select id="pacienteSelecionado"></select>
+                <textarea id="textoProntuario" placeholder="Anotações da sessão" required></textarea>
+                <button type="submit">Salvar Prontuário</button>
+            </form>
+            <h3>Histórico de Prontuários</h3>
+            <ul id="listaProntuarios"></ul>
+        </section>
+
+        <section id="agenda" class="section" style="display:none">
+            <h2>Agenda</h2>
+            <form onsubmit="event.preventDefault(); salvarConsulta();">
+                <input type="datetime-local" id="dataConsulta" required>
+                <select id="pacienteConsulta"></select>
+                <button type="submit">Agendar Consulta</button>
+            </form>
+            <h3>Consultas Agendadas</h3>
+            <ul id="listaAgenda"></ul>
+        </section>
+
+        <section id="relatorios" class="section" style="display:none">
+            <h2>Relatórios</h2>
+            <button onclick="gerarRelatorio()">Gerar Relatório</button>
+            <pre id="saidaRelatorio"></pre>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

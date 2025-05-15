@@ -1,0 +1,42 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #5c6bc0;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+nav button {
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+}
+main {
+    padding: 1em;
+}
+textarea, input {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0.5em;
+}
+button {
+    background: #5c6bc0;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background: white;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-left: 4px solid #5c6bc0;
+}
